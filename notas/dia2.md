@@ -243,6 +243,14 @@ docker run:
             -B
     
     --rm (lo borras después de ejecutarlo)
+
+docker run \
+        --rm \
+        -v /home/ubuntu/environment/curso/proyectos/proyecto:/proyecto \
+        -w /proyecto \
+        maven:3.8.5-openjdk-18 \
+        mvn  compile
+
 ---
 
 Para instalar maven, y sonar... y más herramientas que vamos a necesitar: Jenkins, Tomcat, 
@@ -282,6 +290,7 @@ Es una familia de SO, creados por microsoft... Y como todo SO, tienen su kernel:
 Microsoft ha tenido 2 kernels a lo largo de su historia:
 - DOS -> MS-DOS, Window,1, 2, 3, 95, 98, millenium
 - NT (New technology) -> Windows NT, XP, Server, 7, 8, 10, 11
+
 
 
 ---
