@@ -251,6 +251,20 @@ docker run \
         maven:3.8.5-openjdk-18 \
         mvn  compile
 
+docker run \
+        --rm \
+        -v /home/ubuntu/environment/curso/proyectos/proyecto:/proyecto \
+        -w /proyecto \
+        maven:3.8.5-openjdk-18 \
+        mvn  test
+
+docker run \
+        --rm \
+        -v /home/ubuntu/environment/curso/proyectos/proyecto:/proyecto \
+        -w /proyecto \
+        maven:3.8.5-openjdk-18 \
+        mvn  package
+
 ---
 
 Para instalar maven, y sonar... y más herramientas que vamos a necesitar: Jenkins, Tomcat, 
