@@ -1,0 +1,6 @@
+projectKey=com.curso:proyecto
+serverUrl=http://172.31.44.92:8080
+serverVersion=10.5.1.90531
+dashboardUrl=http://172.31.44.92:8080/dashboard?id=com.curso%3Aproyecto
+ceTaskId=64503b49-792c-4779-81d6-21633333adb3
+ceTaskUrl=http://172.31.44.92:8080/api/ce/task?id=64503b49-792c-4779-81d6-21633333adb3

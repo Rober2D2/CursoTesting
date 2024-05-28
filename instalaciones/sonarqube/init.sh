@@ -12,8 +12,8 @@ sudo chmod 777 /home/ubuntu/environment/data/postgresql/core
 
 sudo sysctl -w vm.max_map_count=524288
 
- docker compose up          # Crea y arranca unos contenedores... y me deja la terminal bloqueada viendo sus logs
-# docker compose up -d      # Crea y arranca unos contenedores... 
+# docker compose up          # Crea y arranca unos contenedores... y me deja la terminal bloqueada viendo sus logs
+ docker compose up -d      # Crea y arranca unos contenedores... 
 #docker compose down        # Para y borra los contenedores
 #docker compose start       # Arranca contenedores previamente parados, pero nos crea
 #docker compose stop        # Para cvontenedores, pero no los borra

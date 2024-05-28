@@ -1,0 +1,23 @@
+squ_291767311f9723e3d776d3910d0c1610f9f19448
+
+
+Cómo se manda código a sonar:
+A través de un sonar-scanner, que es otro programa que me da la gente de sonar.
+Hay varios... (realmente hay 1.. pero varias formas de llamarlo)
+- Si trabajo con maven, ya me dan (los de sonar) un plugin de maven que puedo usar para arrancar el maven-scanner
+- Si trabajo con gradle, ya me dan (los de sonar) un plugin de gradle que puedo usar para arrancar el maven-scanner
+- Si trabajo con dotnet, ya me dan (los de sonar) un plugin de dotnet que puedo usar para arrancar el maven-scanner
+- Si trabajo con and, ya me dan (los de sonar) un plugin de and que puedo usar para arrancar el maven-scanner
+- Si trabajo con otros.. me toca a mi instalarme el sonarscanner... y lanzarlo a manita.
+
+
+
+docker run \
+        --rm \
+        -v /home/ubuntu/environment/curso/proyectos/proyecto:/proyecto \
+        -w /proyecto \
+        maven:3.8.5-openjdk-18 \
+        mvn clean sonar:sonar \
+        -Dsonar.token=squ_291767311f9723e3d776d3910d0c1610f9f19448 \
+        -Dsonar.host.url=http://172.31.44.92:8080
+        

@@ -79,3 +79,83 @@ Esto no siemrpe ha sido así.. Antiguamente: Se cambió hace más de 25 años !!
 1Gb = 1024 Mb
 1Mb = 1024 Kb 
 1Kb = 1024 b
+---
+
+Sonar calcula la deuda técnica...
+El tiempo que tardaría en arreglar todas las mierdas...
+Pero cuidado... DEUDA:
+Deuda es que lo debo... y las deudas tienen un problema.. y es que cuanto más tarde en pagarla, más interes pago.
+
+El dato que da sonar es con intereses.
+No es lo mismo que pague hoy... que pago con pocos intereses... a que pague dentro de un año...
+donde voy a pagar un huevo de intereses.
+
+---
+
+Cobertura...
+
+Sonar no ejecuta pruebas... y no sabe que lineas de cógico concretas están siendo probadas por las pruebas que haga.
+Sonar lo que permite es que le suministre un informe JACOCO (JAVA CODE COBERTURE)
+Ese informe puedo pedir que se genere al ejecutar las pruebas automatizadas.
+
+Al leerlo, entenderá quñé lineas son las que he probado... y en base a eso calcula el % de cobertura del código.
+
+
+public void edad(int edad){
+    Si edad >=18 :
+        print("eres mayor de edad")
+    Si edad == 17:
+        print("el año que viene pruebas campeón!")
+    si no:
+        print("Aqui no entras")
+}
+
+
+3 caminos = COMPLEJIDAD CICLOMATICA = NUMERO MINIMO DE PRUEBAS QUE NECESITO
+
+---
+
+Complejidad cognitiva:
+
+Cómo de complejo para un ser humano es entender un código.
+
+Puedo hacer algo, para reducir la complejidad cilomática? NO... sale de donde? DE LOS REQUISITOS
+
+
+tarea1
+si condicion1:
+    tarea2
+    si condicion2:
+        tarea3
+    sino, si condicion3
+        tarea4
+sino
+    tarea5
+    si condicion4
+        tarea6
+    si condicion5
+        tarea7
+        
+        
+Complejidad ciclomática de ese código? 7       
+    
+Para un ser humano este código es fácil de entender? NI DE COÑA !!!
+
+
+select case / switch{
+    caso 1
+        tarea1
+    caso 2
+        tarea2
+    caso 3
+        tarea3
+    caso 4
+        tarea4
+    caso 5
+        tarea5
+    caso 6
+        tarea6
+    caso por defecto
+        tarea7
+}
+

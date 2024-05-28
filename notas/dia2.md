@@ -135,20 +135,20 @@ protocolo: http
     |                                                      |
     172.31.44.92                                        172.31.44.99
     |                                                      |
-    Ivan PC                 mi-nginx                    MenchuPC: http://172.31.44.92:8888
+    Ivan PC                   sonar                    MenchuPC: http://172.31.44.92:8888
     |   |                       |
-    |   172.17.0.1          172.17.0.2:80 
+    |   172.17.0.1          172.17.0.2:9000
     |   |                       |
-    |   +-----------------------+
-    |   |
-    |   |red de docker
-    |
-    127.0.0.1 -> localhost
+    |   +-----------------------+------------+-----
+    |   |                                    |
+    |   |red de docker                  172.18.0.2
+    |                                        |
+    127.0.0.1 -> localhost                  maven
     |
     |red loopback (red virtual interna del ordenador)
     
     NAT: Redireccion de puertos a nivel del host:
-        172.31.44.92:8888 -> 172.17.0.2:80 
+        172.31.44.92:8080 -> 172.17.0.2:9000
         
         docker container create --name=mi-nginx -e MIVARIABLE=mivalor -e MIVAR2=mival2 -p 172.31.44.92:8888:80 nginx:latest
         docker container create --name=mi-nginx  -p 0.0.0.0:8888:80 nginx:latest
