@@ -49,3 +49,33 @@ Si no se encuentran en esa carpeta, se buscan en un repo de artefacrtos que est�
 
 De hecho la carpeta TARGET nunca debería subirse al repo de git (o a mi sistema de control de código fuente de turno).
 Ya que es una carpeta que puede generarse automáticamente desde el código (src/) gracias a maven.
+
+
+---
+
+# Instalar sonar...
+2 contenedores:
+- Sonar
+   - datos: volumenes
+   - usuario bbdd, contraseña,.. variables de entorno
+   - ruta de la BBDD
+   - Exponer unos puertos: 
+- BBDD
+   - datos: volumenes
+   - usuario, contraseña...variables de entorno
+   - 
+   
+---
+
+10 GiB	- 10 Gibibytes
+1 GiB = 1024 MiB
+1MiB  = 1024 KiB
+
+1Gb = 1000 Mb
+1Mb = 1000 Kb 
+1Kb = 1000 b
+
+Esto no siemrpe ha sido así.. Antiguamente: Se cambió hace más de 25 años !!!!!
+1Gb = 1024 Mb
+1Mb = 1024 Kb 
+1Kb = 1024 b

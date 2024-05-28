@@ -16,7 +16,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.sumar(numero1, numero2);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
 
     @Test
@@ -29,7 +29,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.sumar(numero1, numero2);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
 
     @Test
@@ -42,7 +42,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.sumar(numero1, numero2);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
     @Test
     @DisplayName("Libreria: Doblar un positivo")
@@ -53,7 +53,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.doblar(numero);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
     @Test
     @DisplayName("Libreria: Doblar un negativo")
@@ -64,7 +64,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.doblar(numero);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
     @Test
     @DisplayName("Libreria: Doblar cero")
@@ -75,7 +75,7 @@ class LibreriaTest {
         // Realizo la acción a probar. WHEN
         double resultadoRecibido = Libreria.doblar(numero);
         // confirmo el resultado de la acción. THEN
-        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001)
+        Assertions.assertEquals(resultadoEsperado, resultadoRecibido, 0.000001);
     }
 
 }
