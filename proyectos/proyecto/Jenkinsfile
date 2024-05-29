@@ -1,7 +1,12 @@
 pipeline {
     
     // Donde se ejecuta el programa (el entorno)
-    agent any // En cualquier lao'
+    //agent any // En cualquier lao'
+    agent {
+        docker {
+            image "maven:3.8.5-openjdk-18"
+        }
+    }
     
     stages {
         stage('Compilación') {
