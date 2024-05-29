@@ -1,0 +1,45 @@
+pipeline {
+    
+    // Donde se ejecuta el programa (el entorno)
+    agent any // En cualquier lao'
+    
+    stages {
+        stage('Compilación') {
+            steps {
+                echo 'Compilo'
+            }
+        }
+        stage('Compilar las pruebas') {
+            steps {
+                echo 'Compilo las pruebas'
+            }
+        }
+        stage('Ejecutar las pruebas unitarias') {
+            steps {
+                echo 'Ejecuto las pruebas'
+                echo 'Quiero un informe Jacoco'
+                echo 'Publico los informes con el resultado de pruebas unitarias'
+                echo 'Y de cobertura'
+            }
+        }
+        stage('Ejecutar las pruebas estáticas') {
+            steps {
+                echo 'Llamo al sonar... y le paso mi proyecto'
+                echo 'Miro a ver si el sonar le da el OK'
+            }
+        }
+        stage('Ejecutar las pruebas del frontal (HTML)') {
+            steps {
+                echo 'Necesito selenium... navegadores.. los configuraré'
+                echo 'Necesito un servidor de aplicaciones java, donde instalar mi app'
+                echo 'Ejecutaré las pruebas'
+            }
+        }        
+        stage('Distribuirlo') {
+            steps {
+                echo 'Lo distribuyo'
+            }
+        }        
+    }
+    
+}
