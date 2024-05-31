@@ -7,7 +7,12 @@ pipeline {
             image "maven:3.8.5-openjdk-18"
         }
     }
-    
+    triggers {
+      pollSCM '* * * * *'
+    }
+    parameters {
+      booleanParam defaultValue: true, description: 'Quieres hacer las pruebas con Selenium?', name: 'TEST_UI'
+    }
     stages {
         stage('Compilación') {
             steps {
@@ -23,10 +28,7 @@ pipeline {
         stage('Ejecutar las pruebas unitarias') {
             steps {
                 sh 'mvn -f proyectos/proyecto/pom.xml test'
-                echo 'Quiero un informe Jacoco'
-                // Esta linea tiene un problema
-                // En cuanto una tarea del script fall, jenkins corta la ejecución
-                echo 'Y de cobertura'
+                sh 'mvn -f proyectos/proyecto/pom.xml verify' // Informe jacoco
             }
             // Cualquier etapa (stage) del pipeline puede tener asociadas unas post-tareas
             // Solo si ha ido bien
@@ -61,6 +63,11 @@ pipeline {
                 echo 'Necesito selenium... navegadores.. los configuraré'
                 echo 'Necesito un servidor de aplicaciones java, donde instalar mi app'
                 echo 'Ejecutaré las pruebas'
+            }
+            when {
+                expression {
+                    return params.TEST_UI;
+                }
             }
         }        
         stage('Distribuirlo') {
