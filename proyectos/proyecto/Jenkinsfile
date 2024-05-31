@@ -61,8 +61,20 @@ pipeline {
         stage('Ejecutar las pruebas del frontal (HTML)') {
             steps {
                 echo 'Necesito selenium... navegadores.. los configuraré'
+                sh 'docker compose -f instalaciones/selenium up -d'
+                sh 'sleep 10'
                 echo 'Necesito un servidor de aplicaciones java, donde instalar mi app'
+                sh 'docker compose -f proyectos/proyecto up --build -d'
+                sh 'sleep 10'
                 echo 'Ejecutaré las pruebas'
+                sh 'docker compose -f instalaciones/selenium-test up -d'
+            }
+            post {
+                always {
+                sh 'docker compose -f instalaciones/selenium down'
+                sh 'docker compose -f proyectos/proyecto down'
+                sh 'docker compose -f instalaciones/selenium-test down'
+                }
             }
             when {
                 expression {

@@ -144,3 +144,74 @@ es Jenkins
 
 Solución a este problema, /var/jenkins_home, que es la que usa Jenkins internamente, 
 el la que vamos a usar a nivel del HOST también... para que coincidan y quitarnos problemas.
+
+---
+
+
+Pipeline de CI:
+- MAVEN
+- CONTENEDORES
+- GIT
+- JENKINS
+- SONAR
+- JACOCO
+- JUNIT (informes)
+
+---
+
+Si trabajo con Spring/Springboot, se me genera un .war? SI... pero no
+Que hace Springboot?
+Lo que hace es generar un .jar autoejecutable (zip... igual que los war)
+que tiene dentro mi war, y un tomcat
+
+---
+Lo que vamos a hacer es GENERAR NUESTRA PROPIA IMAGEN DE CONTENEDOR, en la que tengamos un tomcat...
+y dentro YA INSTALADO DE ANTEMANO, nuestra app.
+
+Eso nos permitirá sencillamente crear contenedores posteriormente con nuestra app en funcionamiento dentro de un tomcat.
+
+Para generar imagenes de contenedor usamos archivos Dockerfile.
+Este proceso TAMBIEN QUEDA AUTOMATIZADO... a nivel de DOCKER.Docker es quien creará la imagen de contenedor... que yo quiera
+en base a las ionstrucciones que voy a dar en un archivo DOCKERFILE.
+
+Que hace docker, para generar una imagen de contenedor:
+1- Crear un contenedor con una imagen que le voy a dar (imagen base)
+2- Sobre ese contenedor, que docker va a crear, pedirle que ejecute dentro unos comandos.
+3- Cuando acabemos, que vuelce ese contenedor en una IMAGEN DE CONTENEDOR reutilizable.
+
+---
+
+UI (Pruebas de sistema (END2END))
+
+Quiero abrir una web en un navegador,
+Quiero ir a tal página
+Quiero en tal formulario escribir este usuario y esta contraseña
+Quiero dar al boton de login
+Debo de haber llegado a una pantalla que me diga "login no exitoso"
+Y ya vete de ahí
+
+---
+
+En qué navegador hago las pruebas? Firefox, Edge, Opera, Chrome (98,97,95,91)
+Desde que SO: Windows, MacOS, Linux:Ubuntu
+PC
+Tablet
+Telefono
+
+800 combinaciones disponibles? Navegador / SO / Version navegador / version SO / Dispositivo
+---
+
+WEB-DRIVER (W3C)
+
+
+Selenium es una libreria que me permite desde un código:
+- JAVA
+- JS
+- PYTHON
+
+PYTHON -> LIBRERIA SELENIUM -> WEBDRIVER -> NAVEGADOR
+PYTHON -> LIBRERIA SELENIUM -> SELENIUM GRID -> 700 WEBDRIVER -> 700 NAVEGADOR
+---
+
+Pipeline de Continuous Integration
+Pipeline de Continuous deployment

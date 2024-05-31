@@ -187,7 +187,8 @@ TEST
         Y en la del tester? No me fío... está malea!
         Y en un entorno de test? Antes si.... Ahora ... si... pero no!
             Qué pasa cuando tengo un entorno de test (pruebas, pre-producción, Q&A, entorno de INTEGRACIÓN) precreado... y ya he instalado 30 veces? Ya está maleao!
-        LA TENDENCIA HOY EN DIA es a usar entornos de pruebas de USAR Y TIRAR. Cada vez que necesito una prueba, la creo, la uso y la tiro.... quien me ayuda guay con esto? LOS CONTENEDORES !!!!
+        LA TENDENCIA HOY EN DIA es a usar entornos de pruebas de USAR Y TIRAR. 
+        Cada vez que necesito una prueba, la creo, la uso y la tiro.... quien me ayuda guay con esto? LOS CONTENEDORES !!!!
 
         De donde saco esos entornos... su creación ... ES AUTOMATIZABLE? SI
                                         DOCKER, KUBERNETES
