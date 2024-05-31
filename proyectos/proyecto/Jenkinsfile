@@ -24,8 +24,18 @@ pipeline {
             steps {
                 sh 'mvn -f proyectos/proyecto/pom.xml test'
                 echo 'Quiero un informe Jacoco'
-                junit stdioRetention: '', testResults: 'proyectos/proyecto/target/surefire-reports/*.xml'
+                // Esta linea tiene un problema
+                // En cuanto una tarea del script fall, jenkins corta la ejecución
                 echo 'Y de cobertura'
+            }
+            // Cualquier etapa (stage) del pipeline puede tener asociadas unas post-tareas
+            // Solo si ha ido bien
+            // Si ha ido mal
+            // Siempre
+            post {
+                always {
+                    junit stdioRetention: '', testResults: 'proyectos/proyecto/target/surefire-reports/*.xml'
+                }
             }
         }
         stage('Ejecutar las pruebas estáticas') {
@@ -34,7 +44,7 @@ pipeline {
                 // En jenkins hemos configurado el sonar
                 withSonarQubeEnv('misonar'){ // Me ofrece las variables de entorno con el token y la url
                     // La petición se hace de forma asíncrona
-                    sh 'mvn clean sonar:sonar'
+                    sh 'mvn -f proyectos/proyecto/pom.xml sonar:sonar'
                 }
                 // Cuando sea que sonar acabe el análisis, SONAR DEBERA COMUNICAR EL RESULTADO A JENKINS
                 // Necesitamos integrar SONAR CON JENKINS

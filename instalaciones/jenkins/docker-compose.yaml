@@ -5,7 +5,7 @@ services:
       - "8081:8080"
     user: root
     volumes:
-      - /home/ubuntu/environment/data/jenkins:/var/jenkins_home
+      - /var/jenkins_home:/var/jenkins_home
         # DiD: Docker In Docker
       - /usr/bin/docker:/usr/bin/docker # Le paso al contenedor de jenkins, el comando "docker" que tengo en el host
-      - /run/containerd/containerd.sock:/run/containerd/containerd.sock # Le paso el socket de conexión al servicio de docker
+      - /var/run/docker.sock:/var/run/docker.sock # Le paso el socket de conexión al servicio de docker
