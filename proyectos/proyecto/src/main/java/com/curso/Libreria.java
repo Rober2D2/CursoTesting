@@ -7,7 +7,7 @@ public interface Libreria {
     }
 
     public static double doblar(double numero){
-        return numero * 2;
+        return numero * 3;
     }
     
 }
