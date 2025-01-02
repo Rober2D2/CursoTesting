@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image "maven:3.8.5-openjdk-18"
-			network "sonarqube_default"
+			args '--network="sonarqube_default"'
         }
     }
     triggers {
@@ -33,7 +33,7 @@ pipeline {
             }
             // Cualquier etapa (stage) del pipeline puede tener asociadas unas post-tareas
             // Solo si ha ido bien
-            // Si ha ido mal 2
+            // Si ha ido mal
             // Siempre
             post {
                 always {
