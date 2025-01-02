@@ -56,11 +56,13 @@ pipeline {
 				// Cuando sea que sonar acabe el análisis, SONAR DEBERA COMUNICAR EL RESULTADO A JENKINS
 				// Necesitamos integrar SONAR CON JENKINS
 				// Necesitamos configurar en sonar el jenkins
-				timeout(time: 1, unit: 'HOURS') {
-					// Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-					// true = set pipeline to UNSTABLE, false = don't
-					waitForQualityGate abortPipeline: true
-				}			
+				withSonarQubeEnv('misonar'){ // Me ofrece las variables de entorno con el token y la url
+					timeout(time: 1, unit: 'HOURS') {
+						// Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+						// true = set pipeline to UNSTABLE, false = don't
+						waitForQualityGate abortPipeline: true
+					}			
+				}
 			}
 		}
         stage('Ejecutar las pruebas del frontal (HTML)') {
