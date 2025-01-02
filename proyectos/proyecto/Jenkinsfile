@@ -48,14 +48,14 @@ pipeline {
                 withSonarQubeEnv('misonar'){ // Me ofrece las variables de entorno con el token y la url
                     // La petición se hace de forma asíncrona
                     sh 'mvn -f proyectos/proyecto/pom.xml sonar:sonar'
-                }
-                // Cuando sea que sonar acabe el análisis, SONAR DEBERA COMUNICAR EL RESULTADO A JENKINS
-                // Necesitamos integrar SONAR CON JENKINS
-                // Necesitamos configurar en sonar el jenkins
-                timeout(time: 1, unit: 'HOURS') {
-                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
+					// Cuando sea que sonar acabe el análisis, SONAR DEBERA COMUNICAR EL RESULTADO A JENKINS
+					// Necesitamos integrar SONAR CON JENKINS
+					// Necesitamos configurar en sonar el jenkins
+					timeout(time: 1, unit: 'HOURS') {
+						// Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+						// true = set pipeline to UNSTABLE, false = don't
+						waitForQualityGate abortPipeline: true
+					}					
                 }
             }
         }
