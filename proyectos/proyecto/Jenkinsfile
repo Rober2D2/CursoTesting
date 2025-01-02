@@ -33,7 +33,7 @@ pipeline {
             }
             // Cualquier etapa (stage) del pipeline puede tener asociadas unas post-tareas
             // Solo si ha ido bien
-            // Si ha ido mal
+            // Si ha ido mal 2
             // Siempre
             post {
                 always {
